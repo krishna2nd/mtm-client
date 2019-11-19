@@ -2,8 +2,8 @@ export interface ITriggerItem
  {
     name: string;
     type: TriggerType;
-    selector: string;
-    body: string;
+    selector?: string;
+    body?: string;
     lastEdited: Date;
 
     get(id:string): ITriggerItem;
@@ -20,9 +20,9 @@ export enum TriggerType {
 
 export class MTMTriggerItem implements ITriggerItem {
     public name: string;
-    public type: string;
-    public selector: string;
-    public body: string;
+    public type: TriggerType;
+    public selector?: string;
+    public body?: string;
     public lastEdited: Date;
     public get(id:string) { return {} as ITriggerItem; }
     public create(tag: ITriggerItem) { return tag; }
