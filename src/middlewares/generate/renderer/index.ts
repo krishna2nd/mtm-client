@@ -1,6 +1,8 @@
-import MTMTag from "../../../models";
+import MTMTagItem, { ITagItem } from "../../../models/MTMTagItem";
 export default class MTMRenderer {
     public render(): string {
-        return MTMTag.get();
+
+        const allTags: Array<ITagItem> = MTMTagItem.getAll();
+        return "";
     }
 }
