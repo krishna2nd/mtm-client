@@ -1,7 +1,7 @@
 export interface ITriggerItem
  {
     name: string;
-    type: string;
+    type: TriggerType;
     selector: string;
     body: string;
     lastEdited: Date;
@@ -10,6 +10,12 @@ export interface ITriggerItem
     create(tag: ITriggerItem): ITriggerItem;
     delete(tag: ITriggerItem): boolean;
     update(tag: ITriggerItem): ITriggerItem;
+}
+
+export enum TriggerType {
+    CLICK ='click',
+    SELECTED_CLICK = 'selected_click',
+    PAGE_LOAD = 'page_load'
 }
 
 export class MTMTriggerItem implements ITriggerItem {
