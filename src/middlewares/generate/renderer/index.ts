@@ -1,5 +1,6 @@
+import MTMTag from "../../../models";
 export default class MTMRenderer {
     public render(): string {
-        return "script";
+        return MTMTag.get();
     }
 }
