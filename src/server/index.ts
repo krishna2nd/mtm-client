@@ -1,5 +1,5 @@
-import middlewares from "../middlewares";
-// import { json } from 'body-parser';
+import middleware from "../middlewares";
+var morgan = require("morgan");
 
 var express = require('express')
 var app = express()
@@ -11,7 +11,8 @@ app.use(bodyParser.json({ type: (req) => /application\/.*json.*/i.test(req.heade
 app.use(bodyParser.raw({ type: 'application/vnd.custom-type' }))
 app.use(bodyParser.text({ type: 'text/html' }))
 
-middlewares(app);
+app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"'))
+middleware(app);
 app.get('/', serveStatic('dist/public'));
  
 app.listen(9090)
