@@ -13,10 +13,15 @@ export interface ITagItem
 }
 
 export class MTMTagItem implements ITagItem {
-    get(id:string) { return {} as ITagItem; }
-    create(tag: ITagItem) { return tag; }
-    delete(tag: ITagItem) { return true; }
-    update(tag: ITagItem) { return tag; }
+    public name: string;
+    public type: string;
+    public triggers: string[];
+    public body: string;
+    public lastEdited: Date;
+    public get(id:string) { return {} as ITagItem; }
+    public create(tag: ITagItem) { return tag; }
+    public delete(tag: ITagItem) { return true; }
+    public update(tag: ITagItem) { return tag; }
     static getAll() { return Array<ITagItem>();}
 }
 
