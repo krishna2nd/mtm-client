@@ -1,12 +1,13 @@
 {
-  "name": "mtm-test-client",
+  "name": "mtm-server",
   "version": "1.0.0",
-  "description": "Microsoft Tag manager server test client",
+  "description": "Microsoft Tag manager server",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc && xcopy public dist\\public\\ /s /e /y",
+    "build": "tsc && cp -r public dist/",
+    "build:w": "tsc && xcopy public dist\\public\\ /s /e /y",
     "test": "yarn run test",
-    "start:prod": "pm2 --no-daemon reload pm2.config.js",
+    "start:prod": "pm2 --no-daemon reload pm2.ecosystem.config.js",
     "watch": "nodemon dist/index.js"
   },
   "repository": {
@@ -43,6 +44,6 @@
     "serve-static": "^1.14.1",
     "session": "^0.1.0",
     "tslib": "^1.10.0",
-    "sqlite3": "4.1.0"
+    "typescript": "^3.7.2"
   }
 }
