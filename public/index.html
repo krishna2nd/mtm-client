@@ -35,8 +35,7 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   <script type="text/javascript" src="app.1.0.0.js"></script></body>
-  <script src="https://52.187.146.85/mtm.js?id=MTM-TAG-007" ></script>
-      <script src="https://localhost:9090/mtm.js?id=MTM-TAG-007" ></script>
+      <script src="http://ms-tagmanager.com:9090/mtm.js?id=MTM-TAG-007" ></script>
       <script>
               setInterval(function () {
                   var dl = window.dataLayer;
@@ -46,6 +45,18 @@
                           data: {
                               now: new Date(),
                               value: "some data"
+                          }
+                      })
+                  }
+              }, 4000)
+              setTimeout(function () {
+                  var dl = window.dataLayer;
+                  if (dl) {
+                      dl.push({
+                          event: "sessionTimeOut",
+                          data: {
+                              alias: "krk",
+                              value: "krk@microsoft.com"
                           }
                       })
                   }
